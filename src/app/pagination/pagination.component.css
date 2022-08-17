@@ -1,0 +1,33 @@
+.filter-options-container {
+    text-align: center;
+    padding: 30px;
+}
+
+.filter-options-container button {
+    margin: 0 10px;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 240px;
+}
+
+.card-container {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+.data-images-container {
+    width: 500px;
+}
+
+.data-images-container img {
+    width: 100%;
+}
+
+.paginator-position {
+    text-align: center;
+    padding: 20px;
+}

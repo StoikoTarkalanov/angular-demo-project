@@ -1,0 +1,18 @@
+<article class="edit-container">
+  <form class="edit-form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <input type="text" [value]="userData?.firstName" formControlName="firstName" />
+    <input type="text" [value]="userData?.age" formControlName="age" />
+    <input type="text" [value]="userData?.gender" formControlName="gender" />
+    <button class="edit-button" type="submit">Edit</button>
+  </form>
+  <article className="attention">
+    <p>
+      Updating a user will not update it into the server. It will simulate a
+      PUT/PATCH request and will return the user with modified data
+    </p>
+    <h2>Updated Data</h2>
+    <p>Name: {{updatedData?.firstName}}</p>
+    <p>Age: {{updatedData?.age}}</p>
+    <p>Gender: {{updatedData?.gender}}</p>
+  </article>
+</article>

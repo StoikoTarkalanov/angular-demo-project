@@ -1,0 +1,32 @@
+<section class="pagination-container">
+  <article class="filter-options-container">
+    <h3>Filter Data</h3>
+    <button (click)="filterData(true, 'male')">Male</button>
+    <button (click)="filterData(true, 'female')">Feale</button>
+    <button (click)="filterData(false, 'Sales')">Sales</button>
+    <button (click)="filterData(false, 'Services')">Services</button>
+    <button (click)="filterData(false, 'Marketing')">Marketing</button>
+  </article>
+  <article class="cards">
+    <article
+      class="card-container"
+      *ngFor="
+        let currentData of userPresentationData
+          | paginate: { itemsPerPage: 2, currentPage: page }
+      "
+    >
+      <p>Name: {{ currentData.firstName }}</p>
+      <p>Company Department: {{ currentData.company.department }}</p>
+      <p>Age: {{ currentData.age }}</p>
+      <p>Gender: {{ currentData.gender }}</p>
+      <article class="data-images-container">
+        <img [src]="currentData.image" class="image-cover" />
+      </article>
+      <a [routerLink]="['/edit', currentData.id]">Edit</a>
+    </article>
+  </article>
+  <pagination-controls
+    class="paginator-position"
+    (pageChange)="page = $event"
+  ></pagination-controls>
+</section>
